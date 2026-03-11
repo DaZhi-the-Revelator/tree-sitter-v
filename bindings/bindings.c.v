@@ -6,14 +6,14 @@ module bindings
 // See "core/lib/include/tree_sitter/api.h" for function references.
 
 // We directly build "lib.c" rather using the static library.
-#flag -I @VMODROOT/tree_sitter_v/bindings/core/lib/include
-#flag -I @VMODROOT/tree_sitter_v/bindings/core/lib/src
-#flag @VMODROOT/tree_sitter_v/bindings/core/lib/src/lib.c
+#flag -I @VMODROOT/bindings/core/lib/include
+#flag -I @VMODROOT/bindings/core/lib/src
+#flag @VMODROOT/bindings/core/lib/src/lib.c
 #include "tree_sitter/api.h"
 
-#flag -I @VMODROOT/tree_sitter_v/bindings
-#flag -I @VMODROOT/tree_sitter_v/src
-#flag @VMODROOT/tree_sitter_v/src/parser.c
+#flag -I @VMODROOT/bindings
+#flag -I @VMODROOT/src
+#flag @VMODROOT/src/parser.c
 #include "bindings.h"
 
 pub type TSDecodeFunction = fn (string, u32, &int) u32
